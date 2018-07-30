@@ -1,6 +1,44 @@
-//=====     Setup     =====
-//
-// module aliases
+/*
+class Abc_blocks {
+    constructor() {
+        this.engine = Matter.Engine.create();
+        this.render = Matter.Render;
+        this.world = Matter.World;
+        this.bodies = Matter.Bodies;
+        this.body = Matter.Body;
+        this.mouse = Matter.Mouse;
+        this.MouseConstraint = Matter.MouseConstraint;
+
+        this.world_width = 700;
+        this.world_height = 700;
+
+        this.word = ['a','b','c'];
+    }
+
+
+
+    init() {
+        this.render = this.render.create({
+            element: document.body,
+            engine: engine,
+            options: {
+                width: world_width,
+                height: world_height,
+                wireframes: false
+            }
+        });
+    }
+
+
+
+}
+const blocks = new Abc_blocks();
+blocks.init();
+*/
+
+//=====     Setup     ===== 
+// 
+// module aliases 
 var Engine = Matter.Engine,
     Render = Matter.Render,
     World = Matter.World,
@@ -9,15 +47,15 @@ var Engine = Matter.Engine,
     Mouse = Matter.Mouse,
     MouseConstraint = Matter.MouseConstraint;
 
-// environment variables
+// environment variables 
 var world_width = 700;
 var world_height = 600;
 
-// create an engine
+// create an engine 
 var engine = Engine.create(),
 world = engine.world;
 
-// create a renderer
+// create a renderer 
 var render = Render.create({
     element: document.body,
     engine: engine,
