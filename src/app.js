@@ -23,35 +23,40 @@ var render = Render.create({
     engine: engine,
     options: {
         width: world_width,
-        height: world_height
+        height: world_height,
+        wireframes: false
     }
 });
 
-
-
-
-
 //=====     Bodies    =====
-
-
-
 
 // create two boxes and a ground
 var boxA = Bodies.rectangle(400, 200, 80, 80, {
     render: {
         sprite: {
-            texture: 'a.png'
-            // xScale: 1,
-            // yScale: 1
+            texture: '../public/img/abc_blocks/a.png',
+            xScale: 0.75,
+            yScale: 0.75
         }
     }
 });
 
+var boxB = Bodies.rectangle(450, 50, 80, 80, {
+    render: {
+        sprite: {
+            texture: '../public/img/abc_blocks/b.PNG',
+            xScale: 0.75,
+            yScale: 0.75
+        }
+    }
+});
+
+setTimeout(() => {
+    console.log(boxA);
+},4000);
 
 
-var boxB = Bodies.rectangle(450, 50, 80, 80);
 
-console.log(boxA.render.sprite.texture);
 
 // boxA.render.sprite.texture = 'public/img/a.png';
 
@@ -65,8 +70,9 @@ var left_wall = Bodies.rectangle(-50, world_height/2, 100, world_height, { isSta
 var right_wall = Bodies.rectangle(world_width+50, world_height/2, 100, world_height, { isStatic: true });
 var ceiling = Bodies.rectangle(world_width/2, -50, world_width, 100, { isStatic: true });
 
-
-
+var inter = setInterval(() => {
+    console.log(Matter.SAT.collides(boxB,ground).collided);
+},100);
 
 // add mouse control
 var mouse = Mouse.create(render.canvas),
